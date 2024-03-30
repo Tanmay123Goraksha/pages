@@ -1,0 +1,115 @@
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.container {
+  position: relative;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+}
+
+.title {
+  position: absolute;
+  top: 6%;
+  left: 12.5%;
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 10px;
+  
+  /* Glowing effect */
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+      font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .title {
+      font-size: 1.2rem;
+  }
+}
+
+.slider {
+  position: absolute;
+  bottom: 160px; /* Adjust the position from the bottom */
+  left: 30%; /* Position the slider in the center horizontally */
+  transform: translateX(-50%); /* Move the slider to the left by 50% of its own width */
+  display: flex;
+  align-items: center;
+}
+
+.slider-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 24px;
+  color: white;
+}
+
+.slider-image {
+  border: 4px solid white; /* Add border to the image */
+  width: 440px; /* Adjust image width as needed */
+  height: auto;
+  margin: 0 10px; /* Add spacing between the buttons and the image */
+  opacity: 1; /* Initially set to visible */
+  animation: fadeInOut 0.5s ease; /* Apply animation */
+}
+
+.slider-image.hidden {
+  opacity: 0; /* Hide the image */
+}
+
+.image-container {
+  border: 2px solid white;
+  border-radius: 5px;
+  overflow: hidden; /* Ensure the image doesn't overflow the container */
+}
+
+.description {
+  background-color: rgba(255, 255, 255, 0.7); /* Transparent white */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add shadow */
+}
+
+.description-box {
+  position: absolute;
+  bottom: 100px; /* Adjust the position from the bottom */
+  left: 30%; /* Position the box in the center horizontally */
+  transform: translateX(-50%); /* Move the box to the left by 50% of its own width */
+  background-color: white;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add shadow */
+  width: 430px; /* Adjust width as needed */
+  text-align: center;
+  color: black; /* Set text color to black */
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px white;
+  }
+  to {
+    box-shadow: 0 0 20px white, 0 0 30px white, 0 0 40px white;
+  }
+}
